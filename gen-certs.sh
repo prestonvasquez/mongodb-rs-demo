@@ -32,7 +32,9 @@ extendedKeyUsage     = clientAuth, serverAuth
 subjectAltName       = @alt_names
 
 [alt_names]
-DNS.1 = mongo-rs-ssl1
+DNS.1 = mongo1
+DNS.2 = mongo2
+DNS.3 = mongo3
 DNS.2 = localhost
 IP.1 = 127.0.0.1
 EOF
