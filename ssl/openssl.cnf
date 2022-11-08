@@ -1,0 +1,27 @@
+[req]
+default_bits = 2048
+encrypt_key  = no # Change to encrypt the private key using des3 or similar
+default_md   = sha256
+prompt       = no
+utf8         = yes
+distinguished_name = req_distinguished_name
+req_extensions = v3_req
+
+[req_distinguished_name]
+C  = US
+ST = California
+L  = The Cloud
+O  = Demo
+CN = My Certificate
+
+[v3_req]
+basicConstraints     = CA:FALSE
+subjectKeyIdentifier = hash
+keyUsage             = digitalSignature, keyEncipherment
+extendedKeyUsage     = clientAuth, serverAuth
+subjectAltName       = @alt_names
+
+[alt_names]
+DNS.1 = mongo-rs-ssl1
+DNS.2 = localhost
+IP.1 = 127.0.0.1
